@@ -1,0 +1,17 @@
+{
+  "name": "001-generics-basics",
+  "version": "1.0.0",
+  "description": "Discovering generics using TypeScript and NodeJs.",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node dist/app.js"
+  },
+  "keywords": [
+    "TypeScript",
+    "generics",
+    "basics"
+  ],
+  "author": "Aurelien MOTTIER",
+  "license": "ISC"
+}
