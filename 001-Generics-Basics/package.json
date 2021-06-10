@@ -1,0 +1,17 @@
+{
+  "name": "001-generics-basics",
+  "version": "1.0.0",
+  "description": "Discovering generics using TypeScript and TDD through a concrete example.",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "Aurelien MOTTIER",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.20.16",
+    "@types/jest": "^27.0.1",
+    "typescript": "^4.3.5",
+    "jest": "^27.2.0",
+    "ts-jest": "^27.0.5"
+  }
+}
