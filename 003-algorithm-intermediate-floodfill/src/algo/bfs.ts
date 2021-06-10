@@ -13,33 +13,84 @@ export default class BreadthFirstSearchFiller extends Filler {
 
     fillFrom(root: Cell): string[][] {
 
-        // TODO : Here starts the implementation of BFS.
+        // Puts the first cell in the queue cause it's white since we could click on it :
+        this.queue.enqueue(root);
 
-        // Hint 01 : implementing BFS means using a queue (you have one ready-to-use in Queue.tsx).
+        // As long as we have cells in our queue :
+        while (this.queue.isNotEmpty()) {
 
-        // Hint 02 : how to fill a cell ?
-        // this.rows[rowIndex][colIndex] = "light-blue";
+            // Removes the node from the queue (first position to ensure O(1)) to process it :
+            const cell: Cell = this.queue.dequeue();
+            const cellRowIndex = cell.getRowIndex();
+            const cellColIndex = cell.getColIndex();
 
-        throw Error("Not implemented yet.");
+            // Updates the background color of this cell :
+            this.rows[cellRowIndex][cellColIndex] = "light-blue";
 
-        // TODO : Here ends the implementation of BFS.
+            // Adds the cell that is on the left side of the current one to the queue if we can fill it :
+            this.enqueueTheLeftCellIsStillInTheGridAndWhite(cellRowIndex, cellColIndex);
+
+            // Adds the cell that is on top of the current one to the queue if we can fill it :
+            this.enqueueTheTopCellIsStillInTheGridAndWhite(cellRowIndex, cellColIndex);
+
+            // Adds the cell that is on the right side of the current one to the queue if we can fill it :
+            this.enqueueTheRightCellIsStillInTheGridAndWhite(cellRowIndex, cellColIndex);
+
+            // Adds the cell that is below the current one to the queue if we can fill it :
+            this.enqueueTheBottomCellIsStillInTheGridAndWhite(cellRowIndex, cellColIndex);
+
+        }
+
+        return this.rows;
 
     }
 
     enqueueTheLeftCellIsStillInTheGridAndWhite(rowIndex: number, colIndex: number): void {
-        throw Error("Not implemented yet.");
+
+        const leftCellRowIndex: number = rowIndex;
+        const leftCellColIndex: number = colIndex - 1;
+
+        if (leftCellRowIndex >= 0 && this.rows[leftCellRowIndex][leftCellColIndex] === "white") {
+            const leftCell: Cell = new Cell(this.rows[leftCellRowIndex][leftCellColIndex], leftCellRowIndex, leftCellColIndex);
+            this.queue.enqueue(leftCell);
+        }
+
     }
 
     enqueueTheTopCellIsStillInTheGridAndWhite(rowIndex: number, colIndex: number): void {
-        throw Error("Not implemented yet.");
+
+        const topCellRowIndex: number = rowIndex - 1;
+        const topCellColIndex: number = colIndex;
+
+        if (topCellRowIndex >= 0 && this.rows[topCellRowIndex][topCellColIndex] === "white") {
+            const topCell: Cell = new Cell(this.rows[topCellRowIndex][topCellColIndex], topCellRowIndex, topCellColIndex);
+            this.queue.enqueue(topCell);
+        }
+
     }
 
     enqueueTheRightCellIsStillInTheGridAndWhite(rowIndex: number, colIndex: number): void {
-        throw Error("Not implemented yet.");
+
+        const rightCellRowIndex: number = rowIndex;
+        const rightCellColIndex: number = colIndex + 1;
+
+        if (rightCellRowIndex <= this.lastColIndex && this.rows[rightCellRowIndex][rightCellColIndex] === "white") {
+            const rightCell: Cell = new Cell(this.rows[rightCellRowIndex][rightCellColIndex], rightCellRowIndex, rightCellColIndex);
+            this.queue.enqueue(rightCell);
+        }
+
     }
 
     enqueueTheBottomCellIsStillInTheGridAndWhite(rowIndex: number, colIndex: number): void {
-        throw Error("Not implemented yet.");
+
+        const bottomCellRowIndex: number = rowIndex + 1;
+        const bottomCellColIndex: number = colIndex;
+
+        if (bottomCellRowIndex <= this.lastRowIndex && this.rows[bottomCellRowIndex][bottomCellColIndex] === "white") {
+            const bottomCell: Cell = new Cell(this.rows[bottomCellRowIndex][bottomCellColIndex], bottomCellRowIndex, bottomCellColIndex);
+            this.queue.enqueue(bottomCell);
+        }
+
     }
 
 }
