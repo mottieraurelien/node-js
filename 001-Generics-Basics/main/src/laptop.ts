@@ -8,8 +8,4 @@ export default class Laptop {
         this.model = model;
     }
 
-    public run() {
-        console.log("FAN ON");
-    }
-
 }

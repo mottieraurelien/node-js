@@ -8,8 +8,4 @@ export default class Cat {
         this.nickname = nickname;
     }
 
-    public makeNoise() {
-        console.log("meoooooooooowwwwww");
-    }
-
 }
