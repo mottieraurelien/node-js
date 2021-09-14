@@ -111,3 +111,6 @@ dist
 
 # Generated JavaScript files
 *.js
+
+# Jest generated reports for coverage :
+test-coverage
