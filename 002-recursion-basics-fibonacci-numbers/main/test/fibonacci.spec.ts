@@ -9,7 +9,7 @@ describe('Technical requirements to fulfill in order to compute the Fibonacci nu
         const fibonacci: Fibonacci = new Fibonacci(incorrectInputMaximum);
 
         // [Act / Assert]
-        expect(() => fibonacci.compute()).toThrow("The maximum number must be positive.");
+        expect(() => fibonacci.generate()).toThrow("The maximum number must be positive.");
 
     });
 
@@ -20,7 +20,7 @@ describe('Technical requirements to fulfill in order to compute the Fibonacci nu
         const fibonacci: Fibonacci = new Fibonacci(inputMaximum);
 
         // [Act]
-        const actual: number[] = fibonacci.compute();
+        const actual: number[] = fibonacci.generate();
 
         // [Assert]
         const anEmptyArray: number[] = [];
@@ -35,7 +35,7 @@ describe('Technical requirements to fulfill in order to compute the Fibonacci nu
         const fibonacci: Fibonacci = new Fibonacci(inputMaximum);
 
         // [Act]
-        const actual: number[] = fibonacci.compute();
+        const actual: number[] = fibonacci.generate();
 
         // [Assert]
         expect(actual).toHaveLength(1);
@@ -50,7 +50,7 @@ describe('Technical requirements to fulfill in order to compute the Fibonacci nu
         const fibonacci: Fibonacci = new Fibonacci(inputMaximum);
 
         // [Act]
-        const actual: number[] = fibonacci.compute();
+        const actual: number[] = fibonacci.generate();
 
         // [Assert]
         expect(actual).toHaveLength(4);
@@ -65,7 +65,7 @@ describe('Technical requirements to fulfill in order to compute the Fibonacci nu
         const fibonacci: Fibonacci = new Fibonacci(inputMaximum);
 
         // [Act]
-        const actual: number[] = fibonacci.compute();
+        const actual: number[] = fibonacci.generate();
 
         // [Assert]
         expect(actual).toHaveLength(6);
