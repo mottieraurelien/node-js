@@ -8,11 +8,6 @@
     "test": "jest --coverage",
     "start": "node dist/fibonacci.js"
   },
-  "keywords": [
-    "TypeScript",
-    "generics",
-    "basics"
-  ],
   "author": "Aurelien MOTTIER",
   "license": "ISC",
   "dependencies": {
