@@ -3,5 +3,5 @@ module.exports = {
     preset: 'ts-jest',
     testEnvironment: 'node',
     coverageDirectory: "test-coverage",
-    testRegex: "(/__test__/.*|(\\.|/)(test|spec))\\.ts?$"
+    testRegex: "(/__test__/.*|(\\.|/)spec)\\.ts?$"
 };

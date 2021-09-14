@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Discovering recursion using TypeScript and TDD through a concrete example.",
   "scripts": {
-    "build": "tsc -p .",
     "test": "jest --coverage"
   },
   "author": "Aurelien MOTTIER",
