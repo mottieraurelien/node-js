@@ -22,5 +22,5 @@ export default function useGridFiller(size: number) {
         initialize();
     }, [size])
 
-    return {rows, setRows};
+    return rows;
 }

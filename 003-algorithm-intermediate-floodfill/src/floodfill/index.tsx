@@ -1,37 +1,42 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Grid from "../grid";
 import useGridFiller from "../grid/useGridFiller";
+import fillUsingBfs from "./bfs";
+import fillUsingDfs from "./dfs";
 
 export default function Floodfill() {
 
     const [size] = useState<number>(50);
-    const {rows, setRows} = useGridFiller(size);
 
-    const handleClickUsingBreadthFirstSearch = (rowIndex: number, colIndex: number) => {
-        const newRows = [...rows];
-        fillUsingBreadthFirstSearch(newRows, rowIndex, colIndex);
-        setRows(newRows);
+    const bfsGrid: string[][] = useGridFiller(size);
+    const dfsGrid: string[][] = useGridFiller(size);
+
+    const [bfsRows, setBfsRows] = useState<string[][]>([]);
+    const [dfsRows, setDfsRows] = useState<string[][]>([]);
+
+    useEffect(() => {
+        if (bfsRows.length === 0) setBfsRows(bfsGrid);
+    }, [bfsRows, bfsGrid]);
+
+    useEffect(() => {
+        if (dfsRows.length === 0) setDfsRows(dfsGrid);
+    }, [dfsRows, dfsGrid]);
+
+    const handleClickBfs = (rowIndex: number, colIndex: number) => {
+        const newBfsRows = [...bfsRows];
+        fillUsingBfs(newBfsRows, rowIndex, colIndex);
+        setBfsRows(newBfsRows);
     }
 
-    const handleClickUsingDepthFirstSearch = (rowIndex: number, colIndex: number) => {
-        const newRows = [...rows];
-        fillUsingDepthFirstSearch(newRows, rowIndex, colIndex);
-        setRows(newRows);
-    }
-
-    function fillUsingBreadthFirstSearch(newRows: string[][], rowIndex: number, colIndex: number) {
-        // TODO : implementing the BFS algorithm here cause only the clicked cell is filled for now...
-        newRows[rowIndex][colIndex] = "light-blue"
-    }
-
-    function fillUsingDepthFirstSearch(newRows: string[][], rowIndex: number, colIndex: number) {
-        // TODO : implementing the DFS algorithm here cause only the clicked cell is filled for now...
-        newRows[rowIndex][colIndex] = "light-blue"
+    const handleClickDfs = (rowIndex: number, colIndex: number) => {
+        const newDfsRows = [...dfsRows];
+        fillUsingDfs(newDfsRows, rowIndex, colIndex);
+        setDfsRows(newDfsRows);
     }
 
     return <div className="container">
-        <Grid approach="Breadth-First-Search" rows={rows} handleClick={handleClickUsingBreadthFirstSearch}/>
-        <Grid approach="Depth-First-Search" rows={rows} handleClick={handleClickUsingDepthFirstSearch}/>
+        <Grid approach="Breadth-First-Search" rows={bfsRows} handleClick={handleClickBfs}/>
+        <Grid approach="Depth-First-Search" rows={dfsRows} handleClick={handleClickDfs}/>
     </div>
 
 }
