@@ -27,8 +27,8 @@ code {
 }
 
 .cell {
-    height: 7px;
-    width: 7px;
+    height: 10px;
+    width: 10px;
 }
 
 .pointer {
@@ -36,11 +36,11 @@ code {
 }
 
 .grey {
-    background-color: grey;
+    background-color: #505050;
 }
 
-.light-grey {
-    background-color: lightgrey;
+.light-blue {
+    background-color: lightblue;
     -webkit-transition: background-color 250ms linear;
     -moz-transition: background-color 250ms linear;
     -o-transition: background-color 250ms linear;

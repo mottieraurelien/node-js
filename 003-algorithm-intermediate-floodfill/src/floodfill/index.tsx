@@ -21,12 +21,12 @@ export default function Floodfill() {
 
     function fillUsingBreadthFirstSearch(newRows: string[][], rowIndex: number, colIndex: number) {
         // TODO : implementing the BFS algorithm here cause only the clicked cell is filled for now...
-        newRows[rowIndex][colIndex] = "light-grey"
+        newRows[rowIndex][colIndex] = "light-blue"
     }
 
     function fillUsingDepthFirstSearch(newRows: string[][], rowIndex: number, colIndex: number) {
         // TODO : implementing the DFS algorithm here cause only the clicked cell is filled for now...
-        newRows[rowIndex][colIndex] = "light-grey"
+        newRows[rowIndex][colIndex] = "light-blue"
     }
 
     return <div className="container">
