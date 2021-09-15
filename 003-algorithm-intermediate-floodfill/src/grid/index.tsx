@@ -19,10 +19,12 @@ export default function Grid({approach, rows, handleClick}: FromProps) {
                             cells.map(function (cellClassName: string, colIndex: number) {
                                 const key: string = rowIndex + "-" + colIndex;
                                 let classNames: string = "cell " + cellClassName;
-                                if (cellClassName === "grey") return <td key={key} className={classNames}/>
-                                classNames += " pointer";
-                                return <td key={key} className={classNames}
-                                           onClick={() => handleClick(rowIndex, colIndex)}/>
+                                if (cellClassName === "white") {
+                                    classNames += " pointer";
+                                    return <td key={key} className={classNames}
+                                               onClick={() => handleClick(rowIndex, colIndex)}/>
+                                }
+                                return <td key={key} className={classNames}/>
                             })
                         }
                     </tr>

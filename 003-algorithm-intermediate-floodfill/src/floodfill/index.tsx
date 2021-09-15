@@ -23,14 +23,12 @@ export default function Floodfill() {
     }, [dfsRows, dfsGrid]);
 
     const handleClickBfs = (rowIndex: number, colIndex: number) => {
-        const newBfsRows = [...bfsRows];
-        fillUsingBfs(newBfsRows, rowIndex, colIndex);
+        const newBfsRows = fillUsingBfs(bfsRows, rowIndex, colIndex);
         setBfsRows(newBfsRows);
     }
 
     const handleClickDfs = (rowIndex: number, colIndex: number) => {
-        const newDfsRows = [...dfsRows];
-        fillUsingDfs(newDfsRows, rowIndex, colIndex);
+        const newDfsRows = fillUsingDfs(dfsRows, rowIndex, colIndex);
         setDfsRows(newDfsRows);
     }
 
