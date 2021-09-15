@@ -28,8 +28,8 @@ export default function Floodfill() {
     }
 
     return <div className="container">
-        <Grid key="bfs" rows={rows} handleClick={handleClickUsingBreadthFirstSearch}/>
-        <Grid key="dfs" rows={rows} handleClick={handleClickUsingDepthFirstSearch}/>
+        <Grid approach="Breadth-First-Search" rows={rows} handleClick={handleClickUsingBreadthFirstSearch}/>
+        <Grid approach="Depth-First-Search" rows={rows} handleClick={handleClickUsingDepthFirstSearch}/>
     </div>
 
 }
