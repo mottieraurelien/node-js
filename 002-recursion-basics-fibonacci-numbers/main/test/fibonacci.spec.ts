@@ -24,7 +24,7 @@ describe('Technical requirements to fulfill in order to compute the Fibonacci nu
 
         // [Assert]
         const anEmptyArray: number[] = [];
-        expect(actual).toBe(anEmptyArray);
+        expect(actual).toStrictEqual(anEmptyArray);
 
     });
 
@@ -39,7 +39,7 @@ describe('Technical requirements to fulfill in order to compute the Fibonacci nu
 
         // [Assert]
         expect(actual).toHaveLength(1);
-        expect(actual).toContain(1);
+        expect(actual).toStrictEqual([1]);
 
     });
 
@@ -54,7 +54,7 @@ describe('Technical requirements to fulfill in order to compute the Fibonacci nu
 
         // [Assert]
         expect(actual).toHaveLength(4);
-        expect(actual).toContain([1, 2, 3, 5]);
+        expect(actual).toStrictEqual([1, 2, 3, 5]);
 
     });
 
@@ -69,7 +69,7 @@ describe('Technical requirements to fulfill in order to compute the Fibonacci nu
 
         // [Assert]
         expect(actual).toHaveLength(6);
-        expect(actual).toContain([1, 2, 3, 5, 8, 13]);
+        expect(actual).toStrictEqual([1, 2, 3, 5, 8, 13]);
 
     });
 
