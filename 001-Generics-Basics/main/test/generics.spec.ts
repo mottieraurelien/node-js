@@ -96,7 +96,7 @@ describe('Technical requirements to fulfill in order to implement a list that ex
         const cats: List<Cat> = new List();
 
         // [Act / Assert]
-        expect(() => cats.getFirst()).toThrow("The list is empty and must be filled first.");
+        expect(() => cats.first()).toThrow("The list is empty and must be filled first.");
 
     });
 
@@ -109,7 +109,7 @@ describe('Technical requirements to fulfill in order to implement a list that ex
         const cats: List<Cat> = new List(indie, kira, letty);
 
         // [Act]
-        const actual: Cat = cats.getFirst();
+        const actual: Cat = cats.first();
 
         // [Assert]
         expect(actual).toBe(indie);
@@ -122,7 +122,7 @@ describe('Technical requirements to fulfill in order to implement a list that ex
         const laptops: List<Laptop> = new List();
 
         // [Act / Assert]
-        expect(() => laptops.getFirst()).toThrow("The list is empty and must be filled first.");
+        expect(() => laptops.last()).toThrow("The list is empty and must be filled first.");
 
     });
 
@@ -135,7 +135,7 @@ describe('Technical requirements to fulfill in order to implement a list that ex
         const laptops: List<Laptop> = new List(dell, asus, acer);
 
         // [Act]
-        const actual: Laptop = laptops.getLast();
+        const actual: Laptop = laptops.last();
 
         // [Assert]
         expect(actual).toBe(acer);

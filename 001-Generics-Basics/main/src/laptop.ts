@@ -1,7 +1,7 @@
 export default class Laptop {
 
-    brand: string;
-    model: string;
+    private readonly brand: string;
+    private readonly model: string;
 
     constructor(brand: string, model: string) {
         this.brand = brand;

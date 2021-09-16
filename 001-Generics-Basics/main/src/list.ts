@@ -4,11 +4,11 @@ export default class List<T> {
     private count: number;
 
     constructor(...items: T[]) {
-        this.items = items;
-        this.count = items.length;
+        this.items = items || [];
+        this.count = this.items.length;
     }
 
-    public size(): number {
+    size(): number {
         return this.count;
     }
 
