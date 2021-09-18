@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "jest --coverage"
+    "test": "react-scripts test --watchAll=false"
   },
   "eslintConfig": {
     "extends": [
