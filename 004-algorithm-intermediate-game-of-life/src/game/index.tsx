@@ -26,7 +26,7 @@ export default function GameOfLife() {
         const interval = setInterval(() => {
             const newGrid: Grid = grid.next();
             setGrid(newGrid);
-        }, 500);
+        }, 1000);
         return () => {
             clearInterval(interval);
         };
